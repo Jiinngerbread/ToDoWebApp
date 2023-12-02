@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const note_1 = require("../controllers/note");
+const router = (0, express_1.Router)();
+router.post("/create", note_1.create);
+router.patch("/:noteId", note_1.updateSingleNote);
+router.delete("/:noteId", note_1.removeSingleNote);
+router.get("/", note_1.getAllNotes);
+router.get("/:id", note_1.getSingleNote);
+exports.default = router;
